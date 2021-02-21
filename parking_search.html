@@ -1,0 +1,34 @@
+{% extends "parking_template.html" %}
+{% block title %} Parking_search {% endblock %}
+
+{% block content %} 
+<form action="/parking_search" method="post">
+    <div class="form-group">
+      <label for="Destination">Select Destination</label>
+      <input type="text" class="form-control" id="Destination" name="Destination">
+    </div>
+    <div  class="d-flex justify-content-center"> 
+    <button type="submit" class="btn btn-success btn-lg"   name="action" value="Search" style="margin:5px; width:200px;">Search</button>
+    <button type="submit" class="btn btn-secondary btn-lg" name="action" value="Return" style="margin:5px; width:200px;">Return</button>
+    </div>
+  </form>
+
+  <form action="/parking_select" method="post">
+     
+    <h3>Select your destination</h3>
+    <!-- <p> lista = {{ wybrana_lista}}</p> -->
+    {%for x in wybrana_lista %}
+    <div class="card">
+      <div class="card-body">
+     <!-- <a href="/parking_select.html"  name={{x['nr_pos']}} class="card-link">{{x['address']}}</a> -->
+     <a href="{{url_for('parking_select',  nr_pos = x['nr_pos'], lat = x['lat'], lon = x['lon'], address = x['address'])}}", class="card-link"> {{x['address']}} </a>
+     <!-- ,  name = x['nr_pos'] -->
+      </div>
+    </div>
+    {%endfor%}
+    
+    <!-- <button type="submit" class="btn btn-success btn-lg"   name="action" value="Confirm">Confirm</button> -->
+
+  
+  </form>
+{% endblock %}

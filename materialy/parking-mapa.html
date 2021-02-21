@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+</head>
+<body>
+	<h1> Parkingi</h1>
+  <div id="mapDiv" style="width: 800px; height: 500px"></div>
+  <script>
+    // position we will use later
+    var lat1 = 52.220061;
+    var lon1 = 21.012097;
+    var lat2 = 52.220161;
+    var lon2 = 21.012197;
+    var lat3 = 52.220261;
+    var lon3 = 21.012297;
+   
+
+    // initialize map
+    map = L.map('mapDiv').setView([lat1, lon2], 17);
+    // set map tiles source
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+      maxZoom: 18,
+    }).addTo(map);
+    // add marker to the map
+    marker1 = L.marker([lat1, lon1]).addTo(map);
+    marker2 = L.marker([lat2, lon2]).addTo(map);
+    marker3 = L.marker([lat3, lon3]).addTo(map);
+
+var circle100 = L.circle([lat3, lon3], {
+	color: "red",
+	fillColor: "#f03",
+	fillOpacity: 0.05,
+	radius: 100
+}).addTo(map);
+
+var circle300 = L.circle([lat3, lon3], {
+	color: "red",
+	fillColor: "#f03",
+	fillOpacity: 0.05,
+	radius: 300
+}).addTo(map);
+
+var circle500 = L.circle([lat3, lon3], {
+	color: "red",
+	fillColor: "#f03",
+	fillOpacity: 0.05,
+	radius: 500
+}).addTo(map);
+
+    // add popup to the marker
+    marker1.bindPopup("<b>ACME CO.</b><br />This st. 48<br />New York").openPopup();
+    marker2.bindPopup("<b>ACME CO.</b><br />This st. 48<br />New York").openPopup();
+    marker3.bindPopup("<b>ACME CO.</b><br />This st. 48<br />New York").openPopup();
+
+  </script>
+</body>
+

@@ -1,0 +1,50 @@
+body{
+}
+
+header{
+	text-align: center;
+}
+.screenSize {
+width: 600px;
+height: 700px;
+border: 3px solid #095484;
+float: left;
+overflow: auto;
+align-content: center;
+}
+#mapDiv{
+width: 100%;
+height: 60%;
+}
+
+
+div.selekcja span button{
+display: inline-block;
+border-radius: 5px;
+width: 30%;
+height:20%;
+background-color: Gray; 
+border: 3px solid #095484;
+color: white;
+padding: 10px 20px;
+text-align: center;
+text-decoration: none;
+margin: 2px 2px;
+cursor: pointer;
+font-size:20px;
+}
+div.sterowanie span button {
+display: inline-block;
+width: 45%;
+height:20%;
+background-color: Green; 
+border-radius: 5px;
+border: none;
+color: white;
+padding: 10px 20px;
+text-align: center;
+text-decoration: none;
+margin: 2px 2px;
+cursor: pointer;
+font-size:20px;
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<title>Parking v1</title>
+</head>
+
+<body>
+    <h3>tytuł render2</h3>
+    <p> content = {{ content }}</p>
+
+    {%for x in range(10)%}
+        {%if x % 2 == 1 %}
+            <p> mnożenie {{x}} * {{r}} mod 2 </p>
+        {%endif%}
+    {%endfor%}
+    <p>wartość r = {{ r }}</p>
+</body>
+
+</html>

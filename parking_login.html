@@ -1,0 +1,21 @@
+{% extends "parking_template.html" %}
+{% block title %} Parking_login {% endblock %}
+
+{% block content %} 
+<form action="/parking_login" method="post">
+    <div class="form-group">
+      <label for="userID"> UserID </label>
+      <input type="text" class="form-control" id="userID" name="userID">
+    </div>
+
+    <div class="form-group">
+      <label for="InputPIN">PIN</label>
+      <input type="text" class="form-control" id="InputPIN" name="InputPIN" aria-describedby="PINHelp">
+      <small id="PINHelp" class="form-text text-muted">Used to open Gate</small>
+    </div>
+ 
+    <button type="submit" class="btn btn-secondary btn-lg" name="action" value="Search">Search Space</button>
+    <button type="submit" class="btn btn-success btn-lg"   name="action" value="Display">Display My Reservation</button>
+
+  </form>
+{% endblock %}

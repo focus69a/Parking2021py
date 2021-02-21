@@ -1,0 +1,70 @@
+{% extends "parking_template.html" %}
+{% block title %} Parking_display {% endblock %}
+
+{% block content %} 
+
+<div class="card bg-secondary w-100 text-center">
+  <div class="card-body">
+    <p class="card-title"><strong> <h3>Your Active Reservation </h3> </strong></p>
+  </div>
+</div>
+
+<div class="card-group">
+  <div class="card bg-light text-dark w-50 text-right">
+    <div class="card-body">
+      <p class="card-text">UserID:                     </p>
+      <p class="card-text">Reserved Parking Space nr:  </p>
+      <p class="card-text">Space address: </p>
+      <p class="card-text">Description: </p>
+      <p class="card-text">Reservation valid till:      </p>
+      <p class="card-text">Space valid for groups:   </p>
+      <p class="card-text">Link to Google navigation: </p>
+    </div>
+  </div>
+  <div class="card bg-light text-dark w-50">
+    <div class="card-body">
+      <p class="card-text">{{p1}} </p>
+      <p class="card-text">{{p2}}</p>
+      <p class="card-text">{{p3}}</p>
+      <p class="card-text">{{p8}}</p>
+      <p class="card-text">{{p4}} </p>
+      <p class="card-text">{{p7}}</p>
+      <a href="#" class="Link for navigation:"> {{p5}}</a>
+    </div>
+  </div>
+</div>
+
+<img src={{p6}} class="mx-auto d-block" style="width: 500px; height: 300px;">
+<!-- 
+<div class="card bg-secondary w-100 text-center">
+  <img class="card-img-bottom" src={{p6}}  alt="Parking Space View">
+</div> -->
+<!-- 
+<div class="card bg-light text-dark w-100" >   
+  <img class="card-img-bottom" src="{{p6}}"  alt="Parking Space View">
+  <div class="card-body">
+    <h5 class="card-title">Active Reservation</h5>
+    <p class="card-text">This is your reservation</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">UserID:                     {{p1}} </li>
+    <li class="list-group-item">Reserved Parking Space nr:  {{p2}}</li>
+    <li class="list-group-item">Space address and Description: {{p3}}</li>
+    <li class="list-group-item">Reservation valid till:     {{p4}} </li>
+    <li class="list-group-item">Space valid for groups:   {{p7}}</li>
+    <li class="list-group-item">Space address and Description: {{p3}}</li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="Link for navigation:"> {{p5}}</a>
+
+  </div>
+</div> -->
+
+<form action="/parking_display" method="post" text-center>
+  <div  class="d-flex justify-content-center"> 
+    <button type="submit" class="btn btn-secondary btn-lg" name="action" value="Cancel" style="margin:5px; width:200px;">Cancel This Reservation</button>
+    <button type="submit" class="btn btn-success btn-lg"   name="action" value="Open" style="margin:5px; width:200px;">Open Gate</button>
+    <button type="submit" class="btn btn-secondary btn-lg"   name="action" value="Return" style="margin:5px; width:200px">Return</button>
+  </div>
+  </form>
+{% endblock %}
